@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <string.h>
+#include <time.h>
 #include "json.h"
 
 #ifdef _WIN32
@@ -21,7 +22,9 @@ char defaultfilename[16] = "_keypoints.json";
 char prependfilename[37] = "/home/e516/openpose_raise_hand/json/";
 char filenamestring[13] = "000000000000";
 char filename[64] = "/home/e516/openpose_raise_hand/json/000000000000_keypoints.json";
-
+long long int file_i =0;
+time_t old_result = 0;
+time_t result;
 /* 
 gcc main.c json.c -lm
  */
@@ -148,9 +151,10 @@ static void coory(json_value* value, int x, int y){
 
 static void output(){
 	if(num==0)return;
-	//DO SOMETHING HERE!!!!!!
-	if(lefthand[num])printf("人類 %d 舉起了他的右手！\n", num);
-	if(righthand[num])printf("人類 %d 舉起了他的左手！\n", num);
+	//DO SOMiETHING HERE!!!!!!
+	result = time(NULL);
+	if(lefthand[num])printf("人類 %d 舉起了他的右手 @ %s！\n", num, ctime(&result));
+	if(righthand[num])printf("人類 %d 舉起了他的左手@ %s！\n", num, ctime(&result));
 	
 }
 
