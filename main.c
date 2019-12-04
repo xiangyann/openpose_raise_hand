@@ -151,10 +151,10 @@ static void coory(json_value* value, int x, int y){
 
 static void output(){
 	if(num==0)return;
-	//DO SOMiETHING HERE!!!!!!
+	//DO SOMETHING HERE!!!!!!
 	result = time(NULL);
-	if(lefthand[num])printf("人類 %d 舉起了他的右手 @ %s！\n", num, ctime(&result));
-	if(righthand[num])printf("人類 %d 舉起了他的左手@ %s！\n", num, ctime(&result));
+	if(righthand[num])printf("人類 %d 舉起了他的右手 @ %s！\n", num, ctime(&result));
+	if(lefthand[num])printf("人類 %d 舉起了他的左手@ %s！\n", num, ctime(&result));
 	
 }
 
